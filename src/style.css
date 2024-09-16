@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    --small:1rem;
+    --med:1.2rem;
+    --large:1.8rem;
+    --cloudy-light:rgb(126,126,126,1);
+    --cloudy-dark: rgb(61,61,61,1);
+    --text: white;
+}
+
+body {
+    background-color: var(--cloudy-light);
+    color: var(--text)
+}
+
+.navbar {
+    display:flex;
+    justify-content: space-between;
+}
+
+.today-container {
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.weather, .hilow-container {
+    font-size: var(--med);
+}
+
+.hilow-container {
+    display: flex;
+    gap: .8rem;
+}
+
+.description {
+    display:grid;
+}
+
+.temperature {
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.location {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.conditions-container {
+    display: grid;
+    grid: '... card ...' / 2rem 1fr 2rem;
+}
+
+.condition {
+    font-size: var(--small);
+}
+
+.con-description {
+    font-size: var(--large);
+}
+
+.card-grid {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--cloudy-dark);
+    border-radius: .5rem;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    color: white;
+    opacity: .75;
+}
+
+.btn {
+    background-color: var(--cloudy-dark);
+    color: white;
+    padding: .5rem 1.5rem;
+    border-radius: 1rem;
+}
+
+input {
+    padding: .5rem 1.5rem ;
+    border-radius: .8rem 0rem 0rem .8rem;
+    background-color: var(--cloudy-dark);
+}
+
+.search-btn {
+    padding: .5rem;
+    width: 2rem;
+    border-radius: 0rem .8rem .8rem 0rem;
+    cursor: pointer;
+    background-color: var(--cloudy-dark);
+}
+
+.header-container {
+    padding: .5rem;
+}
+
+.today-container img {
+    width: 20rem;
+}   
