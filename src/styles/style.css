@@ -31,8 +31,13 @@ body {
     margin-bottom: 1rem;
 }
 
-.weather, .hilow-container {
+.today-container+*{
+    margin-bottom: 1rem;
+}
+
+.weather, .hilow-container, .description {
     font-size: var(--med);
+    margin-bottom: .5rem;
 }
 
 .hilow-container {
