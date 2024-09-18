@@ -32,7 +32,7 @@
         <div class="description">Cloudy conditions will continue for the rest of the day</div>
     </div>
     <div class="conditions-container">
-        <div class="card-grid">
+        <div class="card-grid" data-cards>
             <div class="card">
                 <p class="condition">Precipitation</p>
                 <p class="con-description">0"</p>
@@ -51,6 +51,11 @@
             </div>
         </div>
     </div>
-    
+    <template id="card-template">
+        <div class="card">
+            <p class="condition"></p>
+            <p class="con-description"></p>
+        </div>
+    </template>
 </body>
 </html>
