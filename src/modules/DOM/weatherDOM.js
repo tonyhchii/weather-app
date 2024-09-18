@@ -1,4 +1,3 @@
-import { loadWeatherObject } from "../APIloader";
 import cloudy from "../../images/weather-cloudy.svg";
 import fog from "../../images/weather-fog.svg";
 import night from "../../images/weather-night.svg";
@@ -9,7 +8,6 @@ import rain from "../../images/weather-pouring.svg";
 import windy from "../../images/weather-windy.svg";
 import snow from "../../images/weather-snowy-heavy.svg";
 
-const todayObj = await loadWeatherObject();
 const cardGrid = document.querySelector("[data-cards]");
 const cardTemplate = document.getElementById("card-template");
 const todayLocation = document.querySelector(".location");
@@ -30,7 +28,7 @@ const loadCard = (cardTitle, cardDes) => {
   cardGrid.appendChild(cardElement);
 };
 
-const loadCards = () => {
+const loadCards = (todayObj) => {
   cardGrid.innerHTML = "";
   loadCard("Precipitation:", `${todayObj.precip}"`);
   loadCard("Wind:", `${todayObj.windSpeed} mph`);
@@ -38,7 +36,7 @@ const loadCards = () => {
   loadCard("Humidity", `${todayObj.humidity}%`);
 };
 
-const loadToday = () => {
+const loadToday = (todayObj) => {
   todayLocation.textContent = `${todayObj.address.toUpperCase()}`;
   todayTemp.textContent = `${todayObj.temp}°`;
   todayMinTemp.textContent = `L: ${todayObj.tempMin}°`;
@@ -47,7 +45,7 @@ const loadToday = () => {
   todayWeather.textContent = `${todayObj.conditions}`;
 };
 
-const loadIcon = () => {
+const loadIcon = (todayObj) => {
   const icon = todayObj.icon;
   switch (icon) {
     case "snow":
@@ -79,8 +77,8 @@ const loadIcon = () => {
   }
 };
 
-export const loadPage = () => {
-  loadIcon();
-  loadToday();
-  loadCards();
+export const loadPage = (todayObj) => {
+  loadIcon(todayObj);
+  loadToday(todayObj);
+  loadCards(todayObj);
 };

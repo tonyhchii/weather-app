@@ -116,3 +116,7 @@ input {
 .today-container img {
     width: 20rem;
 }   
+
+input:focus {
+    outline: none;
+}

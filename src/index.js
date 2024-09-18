@@ -1,5 +1,4 @@
-import { loadPage } from './modules/DOM/weatherDOM';
+import { loadApp } from './modules/appLoader';
 import './styles/style.css';
 
-
-loadPage();
+loadApp();
