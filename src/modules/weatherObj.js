@@ -1,5 +1,5 @@
-class weatherObj {
-  constructor(
+export class weatherObj {
+  constructor (
     address,
     temp,
     tempMin,
@@ -7,6 +7,7 @@ class weatherObj {
     humidity,
     precip,
     precipProb,
+    feelsLike,
     icon,
     windSpeed,
     conditions,
@@ -19,6 +20,7 @@ class weatherObj {
     this.humidity = humidity;
     this.precip = precip;
     this.precipProb = precipProb;
+    this.feelsLike = feelsLike;
     this.icon = icon;
     this.windSpeed = windSpeed;
     this.conditions = conditions;
